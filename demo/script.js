@@ -24,3 +24,15 @@ function add_point(x, y) {
         }
     }
 }
+function draw_function() {
+    ctx.beginPath();
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 5;
+    if (PTS.length !== 0) {
+        ctx.moveTo(PTS[0].x, PTS[0].y);
+        PTS.slice(1).forEach(function (point) {
+            ctx.lineTo(point.x, point.y);
+        });
+    }
+    ctx.stroke();
+}
