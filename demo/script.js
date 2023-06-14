@@ -96,3 +96,8 @@ intensity.addEventListener('mousemove', function (e) {
         draw_intensity();
     }
 });
+
+clear_btn.addEventListener('click', function (e) {
+    PTS = [];
+    clear();
+});
