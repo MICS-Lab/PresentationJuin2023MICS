@@ -42,7 +42,7 @@ function draw_intensity() {
 
 
 // user interaction
-intensity.addEventListener('mouseup', function (e) {
+intensity.addEventListener('pointerup', function (e) {
     var rect = intensity.getBoundingClientRect();
     var x = e.clientX - rect.left;
     var y = e.clientY - rect.top;
@@ -53,7 +53,7 @@ intensity.addEventListener('mouseup', function (e) {
     add_point(x, y);
     draw_intensity();
 });
-intensity.addEventListener('mouseleave', function (e) {
+intensity.addEventListener('pointerleave', function (e) {
     if (DOWN) {
         var rect = intensity.getBoundingClientRect();
         var x = e.clientX - rect.left;
@@ -63,7 +63,7 @@ intensity.addEventListener('mouseleave', function (e) {
     DOWN = false;
     draw_intensity();
 });
-intensity.addEventListener('mouseenter', function (e) {
+intensity.addEventListener('pointerenter', function (e) {
     if (e.buttons != 0) {
         var rect = intensity.getBoundingClientRect();
         var x = e.clientX - rect.left;
@@ -77,7 +77,7 @@ intensity.addEventListener('mouseenter', function (e) {
         draw_intensity();
     }
 });
-intensity.addEventListener('mousedown', function (e) {
+intensity.addEventListener('pointerdown', function (e) {
     var rect = intensity.getBoundingClientRect();
     var x = e.clientX - rect.left;
     var y = e.clientY - rect.top;
@@ -87,7 +87,7 @@ intensity.addEventListener('mousedown', function (e) {
     clear();
     draw_intensity();
 });
-intensity.addEventListener('mousemove', function (e) {
+intensity.addEventListener('pointermove', function (e) {
     if (DOWN) {
         var rect = intensity.getBoundingClientRect();
         var x = e.clientX - rect.left;
