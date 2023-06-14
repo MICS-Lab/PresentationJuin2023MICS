@@ -101,7 +101,3 @@ clear_btn.addEventListener('click', function (e) {
     PTS = [];
     clear();
 });
-
-intensity.addEventListener('touchstart touchmove touchend', function (e) {
-    e.preventDefault();
-});
