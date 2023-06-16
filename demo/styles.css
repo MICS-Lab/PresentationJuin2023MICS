@@ -3,8 +3,9 @@ body {
     flex-direction: column;
     align-items: center;
 }
-canvas {
+#intensity {
     border: 1px solid black;
+    margin: 0.5em;
 }
 .range_label{
     width: 9em;
@@ -22,8 +23,11 @@ canvas {
     margin-left: 0.5em;
 }
 
+#jaws_with_arrow{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
 .arrow{
-    position: relative;
-    top: 1em;
-    width: 5em;
+    width: 2.5em;
 }
