@@ -1,4 +1,4 @@
-var ctx = intensity.getContext('2d');
+var CTX = intensity.getContext('2d');
 var PTS = [];
 var DOWN = false;
 const WIDTH = intensity.width;
@@ -6,7 +6,7 @@ const HEIGHT = intensity.height;
 
 
 function clear() {
-    ctx.clearRect(0, 0, intensity.width, intensity.height);
+    CTX.clearRect(0, 0, intensity.width, intensity.height);
 }
 
 function add_point(x, y) {
@@ -28,16 +28,16 @@ function add_point(x, y) {
     }
 }
 function draw_intensity() {
-    ctx.beginPath();
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = 5;
+    CTX.beginPath();
+    CTX.strokeStyle = "black";
+    CTX.lineWidth = 5;
     if (PTS.length !== 0) {
-        ctx.moveTo(PTS[0].x, PTS[0].y);
+        CTX.moveTo(PTS[0].x, PTS[0].y);
         PTS.slice(1).forEach(function (point) {
-            ctx.lineTo(point.x, point.y);
+            CTX.lineTo(point.x, point.y);
         });
     }
-    ctx.stroke();
+    CTX.stroke();
 }
 
 
