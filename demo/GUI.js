@@ -59,9 +59,9 @@ intensity.addEventListener('pointerleave', function (e) {
         var x = e.clientX - rect.left;
         var y = e.clientY - rect.top;
         add_point(Math.max(0, Math.min(x, WIDTH)), Math.max(0, Math.min(y, HEIGHT)));
+        draw_intensity();
     }
     DOWN = false;
-    draw_intensity();
 });
 intensity.addEventListener('pointerenter', function (e) {
     if (e.buttons != 0) {
