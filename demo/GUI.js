@@ -1,4 +1,5 @@
 var CTX = intensity.getContext('2d');
+var CTX2 = jaws.getContext('2d');
 var PTS = [];
 var DOWN = false;
 const WIDTH = intensity.width;
@@ -7,6 +8,7 @@ const HEIGHT = intensity.height;
 
 function clear() {
     CTX.clearRect(0, 0, intensity.width, intensity.height);
+    CTX2.clearRect(0, 0, jaws.width, jaws.height);
 }
 
 function add_point(x, y) {
