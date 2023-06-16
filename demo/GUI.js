@@ -104,3 +104,12 @@ clear_btn.addEventListener('click', function (e) {
 
 range_intervals_value.innerHTML = range_intervals.value;
 range_power_value.innerHTML = range_power.value;
+function typical_function(x) {
+    PTS = [];
+    for (var x = 50; x < WIDTH -50; x++) {
+        y = HEIGHT - ((HEIGHT / 3) * Math.sin(x * Math.PI * 2 / WIDTH)) - (x * HEIGHT / WIDTH);
+        PTS.push({ x: x, y: y });
+    }
+}
+typical_function();
+draw_intensity();
