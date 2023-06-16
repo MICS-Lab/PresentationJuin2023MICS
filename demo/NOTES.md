@@ -2,16 +2,14 @@
 ## JS Module
 => **numeric** (full JS linear programming solver)
 
-GitHub: https://github.com/sloisel/numeric/
+Links:
+- GitHub: https://github.com/sloisel/numeric/
+- Tutorial: https://advancedweb.hu/running-lp-optimisation-from-javascript/
+- CDN: https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js (add `<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js"></script>`)
 
-Tutorial: https://advancedweb.hu/running-lp-optimisation-from-javascript/
-
-The module is available locally for legacy purposes; I minified it for fast loading.
-
-One could also use a 
-CDN: https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js
-
-(add `<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js"></script>`)
+The module is available locally for legacy purposes;
+I minified it for fast loading.
+(Thus, I am not using the CDN.)
 
 ## Equality Constraints Tricks
 *'numeric'* (the JS LP solver) does ***NOT*** handle equality constraints, only inequality constraints.
