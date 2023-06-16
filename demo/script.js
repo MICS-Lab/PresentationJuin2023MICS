@@ -1,5 +1,4 @@
 var nb_bixels = 1;
-var bounds = [];
 var intervals_bounds = [];
 var intervals_centers = [];
 var intervals_heights = [];
@@ -10,15 +9,6 @@ var v_max_per_bixel = 1;
 var no_solution = false;
 var power = 100;
 
-function get_bounds() {
-    if (PTS.length === 0) {
-        // console.log("No points");
-        bounds = [];
-        return;
-    } else {
-        bounds = [PTS[0].x, PTS[PTS.length-1].x];
-    }
-}
 function split_to_intervals() {
     if (PTS.length === 0) {
         // console.log("No points");
@@ -26,21 +16,20 @@ function split_to_intervals() {
         intervals_values = [];
         return;
     }
-    get_bounds();
     var nb_intervals = Number(range_intervals.value);
-    var range = bounds[1] - bounds[0];
+    var range = PTS[PTS.length-1].x - PTS[0].x;
     var interval_size = range / nb_intervals;
-    var current = bounds[0];
+    var current = PTS[0].x;
     intervals_bounds = [current];
     intervals_heights = [PTS[0].y];
     intervals_values = [];
     intervals_centers = [];
     for (var i = 0; i < nb_intervals; i++) {
         var middle = current + interval_size / 2;
-        var middle_index = Math.round(middle)-bounds[0];
+        var middle_index = Math.round(middle)-PTS[0].x;
         var middle_value = PTS[middle_index];
         var next = current + interval_size;
-        var end_index = Math.round(next)-bounds[0];
+        var end_index = Math.round(next)-PTS[0].x;
         var end_value = PTS[end_index].y;
         intervals_bounds.push(next);
         intervals_heights.push(end_value);
