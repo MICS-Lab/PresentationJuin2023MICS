@@ -85,6 +85,30 @@ function calculate_leafs() {
     right_leaf_times = leafs[1];
 }
 
+function draw_leafs() {
+    if (left_leaf_times.length === 0) {
+        // console.log("No leafs");
+        return;
+    }
+    const TIME_SCALE = 100;
+    CTX2.beginPath();
+    CTX2.strokeStyle = "red";
+    CTX2.lineWidth = 2;
+    CTX2.moveTo(intervals_centers[0], left_leaf_times[0]*TIME_SCALE);
+    for (var i = 1; i < left_leaf_times.length; i++) {
+        CTX2.lineTo(intervals_centers[i], left_leaf_times[i]*TIME_SCALE);
+    }
+    CTX2.stroke();
+    CTX2.beginPath();
+    CTX2.strokeStyle = "blue";
+    CTX2.lineWidth = 2;
+    CTX2.moveTo(intervals_centers[0], right_leaf_times[0]*TIME_SCALE);
+    for (var i = 1; i < right_leaf_times.length; i++) {
+        CTX2.lineTo(intervals_centers[i], right_leaf_times[i]*TIME_SCALE);
+    }
+    CTX2.stroke();
+}
+
 function draw_all() {
     if (PTS.length === 0) {
         // console.log("No points");
