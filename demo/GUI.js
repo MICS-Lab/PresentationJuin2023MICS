@@ -51,7 +51,7 @@ intensity.addEventListener('pointerup', function (e) {
         PTS.push({ x: Math.round(x)+1, y: y });
     }
     add_point(x, y);
-    draw_intensity();
+    draw_all();
 });
 intensity.addEventListener('pointerleave', function (e) {
     if (DOWN) {
@@ -59,7 +59,7 @@ intensity.addEventListener('pointerleave', function (e) {
         var x = e.clientX - rect.left;
         var y = e.clientY - rect.top;
         add_point(Math.max(0, Math.min(x, WIDTH)), Math.max(0, Math.min(y, HEIGHT)));
-        draw_intensity();
+        draw_all();
     }
     DOWN = false;
 });
@@ -112,4 +112,4 @@ function typical_function(x) {
     }
 }
 typical_function();
-draw_intensity();
+draw_all();

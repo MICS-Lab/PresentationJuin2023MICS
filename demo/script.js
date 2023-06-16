@@ -60,5 +60,8 @@ function draw_all() {
     } else {
         clear();
         draw_intensity();
+        split_to_intervals();
+        draw_bixels_fluence_approximation();
+        
     }
 }
