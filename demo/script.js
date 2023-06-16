@@ -112,6 +112,19 @@ var b = [];
 // cost function
 var c = new Array(nb_var).fill(1);
 
+// equality constraints
+for (var i = 0; i < x_size; i++) {
+    var row = new Array(nb_var).fill(0);
+    row[i] = 1;
+    row[i + x_size] = -1;
+    A.push(row);
+    b.push(f[i]);
+    var row = new Array(nb_var).fill(0);
+    row[i] = -1;
+    row[i + x_size] = 1;
+    A.push(row);
+    b.push(f[i]);
+}
 
 var lp=numeric.solveLP([-9,-5,-6,-4],
     [[6,3,5,2],[-1,0,0,0],[1,0,0,0],[0,-1,0,0],[0,1,0,0],[0,0,-1,0],[0,0,1,0],[0,0,0,-1],[0,0,0,1]],
