@@ -94,20 +94,21 @@ function draw_leafs() {
         return;
     }
     const TIME_SCALE = 100;
+    const TIME_0 = 2;
     CTX2.beginPath();
-    CTX2.strokeStyle = "red";
+    CTX2.strokeStyle = "green";
     CTX2.lineWidth = 2;
-    CTX2.moveTo(intervals_centers[0], left_leaf_times[0]*TIME_SCALE);
+    CTX2.moveTo(intervals_centers[0], left_leaf_times[0]*TIME_SCALE + TIME_0);
     for (var i = 1; i < left_leaf_times.length; i++) {
-        CTX2.lineTo(intervals_centers[i], left_leaf_times[i]*TIME_SCALE);
+        CTX2.lineTo(intervals_centers[i], left_leaf_times[i]*TIME_SCALE + TIME_0);
     }
     CTX2.stroke();
     CTX2.beginPath();
     CTX2.strokeStyle = "blue";
     CTX2.lineWidth = 2;
-    CTX2.moveTo(intervals_centers[0], right_leaf_times[0]*TIME_SCALE);
+    CTX2.moveTo(intervals_centers[0], right_leaf_times[0]*TIME_SCALE + TIME_0);
     for (var i = 1; i < right_leaf_times.length; i++) {
-        CTX2.lineTo(intervals_centers[i], right_leaf_times[i]*TIME_SCALE);
+        CTX2.lineTo(intervals_centers[i], right_leaf_times[i]*TIME_SCALE + TIME_0);
     }
     CTX2.stroke();
 }
