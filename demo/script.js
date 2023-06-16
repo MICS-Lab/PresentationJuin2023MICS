@@ -107,6 +107,9 @@ var f = [1, 2, 3, 2, 1,0];
 var x_size = f.length;
 var nb_var = x_size * 2;
 
+// cost function
+var c = new Array(nb_var).fill(1);
+
 
 var lp=numeric.solveLP([-9,-5,-6,-4],
     [[6,3,5,2],[-1,0,0,0],[1,0,0,0],[0,-1,0,0],[0,1,0,0],[0,0,-1,0],[0,0,1,0],[0,0,0,-1],[0,0,0,1]],
