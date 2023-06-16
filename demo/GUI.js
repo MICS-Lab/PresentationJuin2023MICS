@@ -103,6 +103,7 @@ clear_btn.addEventListener('click', function (e) {
 });
 
 range_intervals_value.innerHTML = range_intervals.value;
+range_max_speed_value.innerHTML = range_max_speed.value;
 range_power_value.innerHTML = range_power.value;
 function typical_function(x) {
     PTS = [];

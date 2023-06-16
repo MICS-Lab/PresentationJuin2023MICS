@@ -20,6 +20,12 @@
             <span id="range_power_value" class="range_value">100</span>
         </div>
         <div class="range">
+            <label for="range_max_speed" class="range_label">Maximal Speed:</label>
+            <input id='range_max_speed' type="range" min="1" max="20" step="1" value="5"
+                oninput="range_max_speed_value.innerHTML = range_max_speed.value; draw_all();" />
+            <span id="range_max_speed_value" class="range_value">100</span>
+        </div>
+        <div class="range">
             <label for="range_intervals" class="range_label">Number of intervals:</label>
             <input id='range_intervals' type="range" min="1" max="40" step="1" value="1"
                 oninput="range_intervals_value.innerHTML = range_intervals.value; draw_all();" />
