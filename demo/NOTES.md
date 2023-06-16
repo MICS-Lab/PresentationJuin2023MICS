@@ -10,7 +10,9 @@ CDN: https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js
 
 (add `<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js"></script>`)
 
-## Equality Constraints Trick
+## Equality Constraints Tricks
 *'numeric'* (the JS LP solver) does ***NOT*** handle equality constraints, only inequality constraints.
 
 Thus, I have turned every equality constraint into two inequality constraints ($a = b$ becomes $a \leq b$ and $b \leq a$).
+
+This method is subject to numerical errors, so I also added a small positive $\varepsilon$ to make the solver converge (so $a = b$ in fact becomes $a \leq b$ and $b \leq a + \varepsilon$).
