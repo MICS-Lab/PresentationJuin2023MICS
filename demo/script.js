@@ -151,6 +151,21 @@ for (var i = 0; i < x_size-1; i++) {
     A.push(row);
     b.push(v_max);
 }
+// no backward constraints
+for (var i = 0; i < x_size-1; i++) {
+    // left leafs
+    var row = new Array(nb_var).fill(0);
+    row[i] = -1;
+    row[i + 1] = 1;
+    A.push(row);
+    b.push(0);
+    // right leafs
+    var row = new Array(nb_var).fill(0);
+    row[x_size + i] = -1;
+    row[x_size + i + 1] = 1;
+    A.push(row);
+    b.push(0);
+}
 
 var lp=numeric.solveLP(c, A, b);
 
