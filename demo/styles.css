@@ -6,8 +6,18 @@ body {
 canvas {
     border: 1px solid black;
 }
+.range_label{
+    width: 100%;
+    text-align: right;
+    margin-right: 0.5em;
+}
 .range{
     display: flex;
     align-items: center;
     margin-right: 2em;
+}
+.range_value{
+    width: 5em;
+    text-align: center;
+    margin-left: 0.5em;
 }
