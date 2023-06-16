@@ -7,8 +7,9 @@ var power = 100;
 
 function get_bounds() {
     if (PTS.length === 0) {
-        console.log("No points");
+        // console.log("No points");
         bounds = [];
+        return;
     } else {
         bounds = [PTS[0].x, PTS[PTS.length-1].x];
     }
@@ -39,8 +40,11 @@ function split_to_intervals() {
 }
 
 function draw_all() {
-    clear();
-    draw_intensity();
-    get_bounds();
-    
+    if (PTS.length === 0) {
+        // console.log("No points");
+        return;
+    } else {
+        clear();
+        draw_intensity();
+    }
 }
