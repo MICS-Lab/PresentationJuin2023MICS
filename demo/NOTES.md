@@ -2,6 +2,8 @@
 ## JS Module
 => **numeric** (full JS linear programming solver)
 
+This module is not maintained anymore (last commit in 2012...), but it works for this app, so I'm just happy with it.
+
 Links:
 - GitHub: https://github.com/sloisel/numeric/
 - Tutorial: https://advancedweb.hu/running-lp-optimisation-from-javascript/
