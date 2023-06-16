@@ -96,7 +96,20 @@ function calculate_leafs() {
         no_solution = true;
     }
 }
-
+function draw_effective_intensity() {
+    if (left_leaf_times.length === 0) {
+        // console.log("No leafs");
+        return;
+    }
+    CTX.beginPath();
+    CTX.strokeStyle = "red";
+    CTX.lineWidth = 5;
+    CTX.moveTo(intervals_centers[0], (left_leaf_times[0]-right_leaf_times[0])*range_power.value);
+    for (var i = 1; i < left_leaf_times.length; i++) {
+        CTX.lineTo(intervals_centers[i], (left_leaf_times[i]-right_leaf_times[i])*range_power.value);
+    }
+    CTX.stroke();
+}
 function draw_leafs() {
     if (left_leaf_times.length === 0) {
         // console.log("No leafs");
@@ -141,5 +154,6 @@ function draw_all() {
         draw_bixels_fluence_approximation();
         calculate_leafs();
         draw_leafs();
+        draw_effective_intensity();
     }
 }
