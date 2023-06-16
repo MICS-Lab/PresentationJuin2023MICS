@@ -167,8 +167,10 @@ for (var i = 0; i < x_size-1; i++) {
     b.push(0);
 }
 
-var lp=numeric.solveLP(c, A, b);
+var lp = numeric.solveLP(c, A, b);
+var solution = numeric.trunc(lp.solution,1e-12);
+left_leaf_time = solution.slice(0, x_size);
+right_leaf_time = solution.slice(x_size, nb_var);
 
-var solution=numeric.trunc(lp.solution,1e-12);
-
-console.log(solution);
+console.log(left_leaf_time);
+console.log(right_leaf_time);
