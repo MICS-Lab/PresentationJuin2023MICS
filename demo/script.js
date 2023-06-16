@@ -3,6 +3,8 @@ var bounds = [];
 var intervals_bounds = [];
 var intervals_heights = [];
 var intervals_values = [];
+var left_leaf_times = [];
+var right_leaf_times = [];
 var v_max_per_bixel = 1;
 var power = 100;
 
@@ -72,6 +74,15 @@ function draw_bixels_intervals() {
         CTX.lineTo(intervals_bounds[i], intervals_heights[i]);
     }
     CTX.stroke();
+}
+function calculate_leafs() {
+    if (intervals_bounds.length === 0) {
+        // console.log("No intervals");
+        return;
+    }
+    leafs = leaf_sequence(intervals_values, range_power.value, range_max_speed.value);
+    left_leaf_times = leafs[0];
+    right_leaf_times = leafs[1];
 }
 
 function draw_all() {
