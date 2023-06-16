@@ -105,6 +105,7 @@ clear_btn.addEventListener('click', function (e) {
 // setup
 var f = [1, 2, 3, 2, 1,0];
 var p = 3;
+var v_max = 2;
 var x_size = f.length;
 var nb_var = x_size * 2;
 var A = [];
@@ -133,6 +134,22 @@ for (var i = 0; i < nb_var; i++) {
     row[i] = -1;
     A.push(row);
     b.push(0);
+}
+
+// max velocity constraints
+for (var i = 0; i < x_size-1; i++) {
+    // left leafs
+    var row = new Array(nb_var).fill(0);
+    row[i] = 1;
+    row[i + 1] = -1;
+    A.push(row);
+    b.push(v_max);
+    // right leafs
+    var row = new Array(nb_var).fill(0);
+    row[x_size + i] = 1;
+    row[x_size + i + 1] = -1;
+    A.push(row);
+    b.push(v_max);
 }
 
 var lp=numeric.solveLP(c, A, b);
