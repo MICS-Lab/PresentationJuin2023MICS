@@ -13,6 +13,11 @@
     <h1>Inverse Sliding Window Algorithm</h1>
     <fieldset>
         <legend>Controls</legend>
+        <div class="range">
+            <label for="range_power">Power:</label>
+            <input id='range_power' type="range" min="10" max="500" step="1" value="100"
+                oninput="change_power(); draw_all();" />
+        </div>
         <button id="clear_btn">Clear</button>
     </fieldset>
     <canvas id="intensity" width="800" height="400"></canvas>
