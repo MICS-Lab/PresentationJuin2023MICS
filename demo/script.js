@@ -102,6 +102,13 @@ function draw_leafs() {
         // console.log("No leafs");
         return;
     }
+    if(no_solution) {
+        CTX2.beginPath();
+        CTX2.fillStyle = "red";
+        CTX2.fillStyle = "#ffcccb";
+        CTX2.rect(0, 0, jaws.width, jaws.height);
+        CTX2.fill();
+    }
     const TIME_SCALE = 100;
     const TIME_0 = 2;
     CTX2.beginPath();
