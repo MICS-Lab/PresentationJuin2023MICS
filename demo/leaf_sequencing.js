@@ -68,12 +68,12 @@ function leaf_sequence(fluence, power, max_speed){
     return [left_leaf_times, right_leaf_times];
 }
 
-// test setup
-var f = [1, 2, 3, 2, 1,0];
-var p = 3;
-var s_max = 2;
-var leafs = leaf_sequence(f, p, s_max);
-var left_leaf_times = leafs[0];
-var right_leaf_times = leafs[1];
-console.log(left_leaf_times);
-console.log(right_leaf_times);
+// // test setup
+// var f = [1, 2, 3, 2, 1,0];
+// var p = 3;
+// var s_max = 2;
+// var leafs = leaf_sequence(f, p, s_max);
+// var left_leaf_times = leafs[0];
+// var right_leaf_times = leafs[1];
+// console.log(left_leaf_times);
+// console.log(right_leaf_times);
