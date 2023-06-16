@@ -3,6 +3,13 @@ var PTS = [];
 var DOWN = false;
 const WIDTH = intensity.width;
 const HEIGHT = intensity.height;
+var nb_bixels = 1;
+var x_min = 0;
+var y_min = 0;
+var intervals_bounds = [];
+var intervals_values = [];
+var v_max_per_bixel = 1;
+var power = 100;
 
 
 function clear() {
@@ -101,3 +108,9 @@ clear_btn.addEventListener('click', function (e) {
     PTS = [];
     clear();
 });
+
+function draw_all() {
+    clear();
+    draw_intensity();
+
+}
