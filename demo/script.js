@@ -54,6 +54,22 @@ function draw_bixels_fluence_approximation() {
     CTX.lineTo(intervals_bounds[i], intervals_values[i-1]);
     CTX.stroke();
 }
+function draw_bixels_intervals() {
+    if (intervals_bounds.length === 0) {
+        // console.log("No intervals");
+        return;
+    }
+    CTX.beginPath();
+    CTX.strokeStyle = "yellow";
+    CTX.lineWidth = 1;
+    for (var i = 0; i < intervals_values.length; i++) {
+        CTX.moveTo(intervals_bounds[i], HEIGHT);
+        CTX.lineTo(intervals_bounds[i], intervals_values[i]);
+    }
+    CTX.moveTo(intervals_bounds[i], HEIGHT);
+    CTX.lineTo(intervals_bounds[i], intervals_values[i-1]);
+    CTX.stroke();
+}
 
 function draw_all() {
     if (PTS.length === 0) {
@@ -63,7 +79,8 @@ function draw_all() {
         clear();
         draw_intensity();
         split_to_intervals();
+        draw_bixels_intervals();
         draw_bixels_fluence_approximation();
-        
+
     }
 }
