@@ -101,3 +101,6 @@ clear_btn.addEventListener('click', function (e) {
     PTS = [];
     clear();
 });
+
+range_intervals_value.innerHTML = range_intervals.value;
+range_power_value.innerHTML = range_power.value;

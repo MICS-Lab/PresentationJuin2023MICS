@@ -16,13 +16,13 @@
         <div class="range">
             <label for="range_power" class="range_label">Power:</label>
             <input id='range_power' type="range" min="10" max="500" step="1" value="100"
-                oninput="draw_all();" />
+                oninput="range_power_value.innerHTML = range_power.value; draw_all();" />
             <span id="range_power_value" class="range_value">100</span>
         </div>
         <div class="range">
             <label for="range_intervals" class="range_label">Number of intervals:</label>
             <input id='range_intervals' type="range" min="1" max="200" step="1" value="1"
-                oninput="draw_all();" />
+                oninput="range_intervals_value.innerHTML = range_intervals.value; draw_all();" />
             <span id="range_intervals_value" class="range_value">1</span>
         </div>
         <button id="clear_btn">Clear</button>
