@@ -38,6 +38,20 @@ function split_to_intervals() {
         current = next;
     }
 }
+function draw_bixels_fluence_approximation() {
+    if (intervals_bounds.length === 0) {
+        // console.log("No intervals");
+        return;
+    }
+    CTX.beginPath();
+    CTX.strokeStyle = "orange";
+    CTX.lineWidth = 2;
+    CTX.moveTo(intervals_bounds[0], intervals_values[0]);
+    for (var i = 1; i < intervals_bounds.length; i++) {
+        CTX.lineTo(intervals_bounds[i], intervals_values[i-1]);
+    }
+    CTX.stroke();
+}
 
 function draw_all() {
     if (PTS.length === 0) {
