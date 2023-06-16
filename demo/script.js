@@ -104,6 +104,7 @@ clear_btn.addEventListener('click', function (e) {
 
 // setup
 var f = [1, 2, 3, 2, 1,0];
+var p = 3;
 var x_size = f.length;
 var nb_var = x_size * 2;
 var A = [];
@@ -118,12 +119,12 @@ for (var i = 0; i < x_size; i++) {
     row[i] = 1;
     row[i + x_size] = -1;
     A.push(row);
-    b.push(f[i]);
+    b.push(f[i]/p+0.00001);
     var row = new Array(nb_var).fill(0);
     row[i] = -1;
     row[i + x_size] = 1;
     A.push(row);
-    b.push(f[i]);
+    b.push(-f[i]/p);
 }
 
 var lp=numeric.solveLP([-9,-5,-6,-4],
