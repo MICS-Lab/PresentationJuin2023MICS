@@ -7,6 +7,7 @@ This module is not maintained anymore (last commit in 2012...), but it works for
 Links:
 - GitHub: https://github.com/sloisel/numeric/
 - Tutorial: https://advancedweb.hu/running-lp-optimisation-from-javascript/
+- Official website: http://www.numericjs.com/ (out of date)
 - CDN: https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js (add `<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js"></script>`)
 
 The module is available locally for legacy purposes;
