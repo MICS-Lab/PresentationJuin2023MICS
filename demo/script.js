@@ -1,6 +1,7 @@
 var nb_bixels = 1;
 var bounds = [];
 var intervals_bounds = [];
+var intervals_centers = [];
 var intervals_heights = [];
 var intervals_values = [];
 var left_leaf_times = [];
@@ -32,16 +33,18 @@ function split_to_intervals() {
     intervals_bounds = [current];
     intervals_heights = [PTS[0].y];
     intervals_values = [];
+    intervals_centers = [];
     for (var i = 0; i < nb_intervals; i++) {
         var middle = current + interval_size / 2;
         var middle_index = Math.round(middle)-bounds[0];
-        var middle_value = PTS[middle_index].y;
+        var middle_value = PTS[middle_index];
         var next = current + interval_size;
         var end_index = Math.round(next)-bounds[0];
         var end_value = PTS[end_index].y;
         intervals_bounds.push(next);
         intervals_heights.push(end_value);
-        intervals_values.push(middle_value);
+        intervals_values.push(middle_value.y);
+        intervals_centers.push(middle_value.x);
         current = next;
     }
 }
@@ -119,6 +122,7 @@ function draw_all() {
         split_to_intervals();
         draw_bixels_intervals();
         draw_bixels_fluence_approximation();
-
+        calculate_leafs();
+        draw_leafs();
     }
 }
