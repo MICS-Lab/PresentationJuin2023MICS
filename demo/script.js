@@ -1,6 +1,7 @@
 var nb_bixels = 1;
 var bounds = [];
 var intervals_bounds = [];
+var intervals_heights = [];
 var intervals_values = [];
 var v_max_per_bixel = 1;
 var power = 100;
@@ -27,13 +28,17 @@ function split_to_intervals() {
     var interval_size = range / nb_intervals;
     var current = bounds[0];
     intervals_bounds = [current];
+    intervals_heights = [PTS[0].y];
     intervals_values = [];
     for (var i = 0; i < nb_intervals; i++) {
         var middle = current + interval_size / 2;
         var middle_index = Math.round(middle)-bounds[0];
         var middle_value = PTS[middle_index].y;
         var next = current + interval_size;
+        var end_index = Math.round(next)-bounds[0];
+        var end_value = PTS[end_index].y;
         intervals_bounds.push(next);
+        intervals_heights.push(end_value);
         intervals_values.push(middle_value);
         current = next;
     }
@@ -62,12 +67,10 @@ function draw_bixels_intervals() {
     CTX.beginPath();
     CTX.strokeStyle = "yellow";
     CTX.lineWidth = 1;
-    for (var i = 0; i < intervals_values.length; i++) {
+    for (var i = 0; i < intervals_heights.length; i++) {
         CTX.moveTo(intervals_bounds[i], HEIGHT);
-        CTX.lineTo(intervals_bounds[i], intervals_values[i]);
+        CTX.lineTo(intervals_bounds[i], intervals_heights[i]);
     }
-    CTX.moveTo(intervals_bounds[i], HEIGHT);
-    CTX.lineTo(intervals_bounds[i], intervals_values[i-1]);
     CTX.stroke();
 }
 
