@@ -7,6 +7,7 @@ var intervals_values = [];
 var left_leaf_times = [];
 var right_leaf_times = [];
 var v_max_per_bixel = 1;
+var no_solution = false;
 var power = 100;
 
 function get_bounds() {
@@ -83,9 +84,17 @@ function calculate_leafs() {
         // console.log("No intervals");
         return;
     }
-    leafs = leaf_sequence(intervals_values, range_power.value, range_max_speed.value);
-    left_leaf_times = leafs[0];
-    right_leaf_times = leafs[1];
+    try {
+        leafs = leaf_sequence(intervals_values, range_power.value, range_max_speed.value);
+        left_leaf_times = leafs[0];
+        right_leaf_times = leafs[1];
+        no_solution = false;
+    } catch (error) {
+        // console.log("No solution");
+        left_leaf_times = [-1];
+        right_leaf_times = [-1];
+        no_solution = true;
+    }
 }
 
 function draw_leafs() {
