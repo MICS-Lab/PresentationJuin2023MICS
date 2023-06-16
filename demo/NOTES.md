@@ -6,6 +6,9 @@ GitHub: https://github.com/sloisel/numeric/
 
 Tutorial: https://advancedweb.hu/running-lp-optimisation-from-javascript/
 
+The module is available locally for legacy purposes; I minified it for fast loading.
+
+One could also use a 
 CDN: https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js
 
 (add `<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js"></script>`)
