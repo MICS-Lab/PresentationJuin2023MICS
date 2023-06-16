@@ -127,10 +127,7 @@ for (var i = 0; i < x_size; i++) {
     b.push(-f[i]/p);
 }
 
-var lp=numeric.solveLP([-9,-5,-6,-4],
-    [[6,3,5,2],[-1,0,0,0],[1,0,0,0],[0,-1,0,0],[0,1,0,0],[0,0,-1,0],[0,0,1,0],[0,0,0,-1],[0,0,0,1]],
-    [10,0,1,0,1,0,1,0,1]
-);
+var lp=numeric.solveLP(c, A, b);
 
 var solution=numeric.trunc(lp.solution,1e-12);
 
