@@ -127,6 +127,14 @@ for (var i = 0; i < x_size; i++) {
     b.push(-f[i]/p);
 }
 
+// positive time constraints
+for (var i = 0; i < nb_var; i++) {
+    var row = new Array(nb_var).fill(0);
+    row[i] = -1;
+    A.push(row);
+    b.push(0);
+}
+
 var lp=numeric.solveLP(c, A, b);
 
 var solution=numeric.trunc(lp.solution,1e-12);
