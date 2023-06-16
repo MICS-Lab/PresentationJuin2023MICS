@@ -106,6 +106,8 @@ clear_btn.addEventListener('click', function (e) {
 var f = [1, 2, 3, 2, 1,0];
 var x_size = f.length;
 var nb_var = x_size * 2;
+var A = [];
+var b = [];
 
 // cost function
 var c = new Array(nb_var).fill(1);
