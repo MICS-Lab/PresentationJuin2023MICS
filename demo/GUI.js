@@ -78,5 +78,8 @@ function typical_fluence(x) {
         PTS.push({ x: x, y: y });
     }
 }
+function no_pts(){
+    PTS = [];
+}
 typical_fluence();
 draw_all();

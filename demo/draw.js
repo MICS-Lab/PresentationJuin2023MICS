@@ -12,8 +12,8 @@ function draw_intensity() {
         PTS.slice(1).forEach(function (point) {
             CTX.lineTo(point.x, point.y);
         });
+        CTX.stroke();
     }
-    CTX.stroke();
 }
 
 function draw_bixels_fluence_approximation() {
@@ -96,23 +96,18 @@ function draw_leafs() {
 }
 
 function draw_all() {
-    if (PTS.length === 0) {
-        // console.log("No points");
-        return;
-    } else {
-        clear();
-        draw_intensity();
-        split_to_intervals();
-        if(draw_intervals_checkbox.checked){
-            draw_bixels_intervals();
-        }
-        if(draw_discretization_checkbox.checked){
-            draw_bixels_fluence_approximation();
-        }
-        calculate_leafs();
-        draw_leafs();
-        if(draw_effective_intensity_checkbox.checked){
-            draw_effective_intensity();
-        }
+    clear();
+    draw_intensity();
+    split_to_intervals();
+    if(draw_intervals_checkbox.checked){
+        draw_bixels_intervals();
+    }
+    if(draw_discretization_checkbox.checked){
+        draw_bixels_fluence_approximation();
+    }
+    calculate_leafs();
+    draw_leafs();
+    if(draw_effective_intensity_checkbox.checked){
+        draw_effective_intensity();
     }
 }
