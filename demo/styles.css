@@ -22,6 +22,16 @@ body {
     text-align: center;
     margin-left: 0.5em;
 }
+.check{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.checkbox_label{
+    margin-left: 0.25em;
+    width: 10em;
+}
 
 #jaws_with_arrow{
     display: flex;

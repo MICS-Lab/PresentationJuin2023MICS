@@ -31,6 +31,10 @@
                 oninput="range_intervals_value.innerHTML = range_intervals.value; draw_all();" />
             <span id="range_intervals_value" class="range_value">1</span>
         </div>
+        <div class="check">
+            <input type="checkbox" id="draw_intervals_checkbox" onchange="draw_all();">
+            <label for="draw_intervals_checkbox" class="checkbox_label">Draw intervals</label>
+        </div>
         <button id="clear_btn">Clear</button>
     </fieldset>
     <canvas id="intensity" width="800" height="400"></canvas>
