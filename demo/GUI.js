@@ -71,5 +71,12 @@ function classic_function(x) {
         PTS.push({ x: x, y: y });
     }
 }
-classic_function();
+function typical_fluence(x) {
+    PTS = [];
+    for (var x = 200; x < WIDTH - 200; x++) {
+        y = 50*Math.sin(0.025*(200-x)) + 0.3*x + 100
+        PTS.push({ x: x, y: y });
+    }
+}
+typical_fluence();
 draw_all();
