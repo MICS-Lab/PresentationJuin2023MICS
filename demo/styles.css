@@ -13,6 +13,12 @@ body {
     align-items: center;
     justify-content: center;
 }
+.separator{
+    width: 20em;
+    height: 0.1em;
+    background-color: black;
+    margin: 0.5em;
+}
 .range_label{
     width: 9em;
     text-align: right;
