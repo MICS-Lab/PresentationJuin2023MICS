@@ -60,9 +60,3 @@ intensity.addEventListener('pointermove', function (e) {
         draw_intensity();
     }
 });
-
-range_intervals_value.innerHTML = range_intervals.value;
-range_max_speed_value.innerHTML = range_max_speed.value;
-range_power_value.innerHTML = range_power.value;
-typical_fluence();
-draw_all();
