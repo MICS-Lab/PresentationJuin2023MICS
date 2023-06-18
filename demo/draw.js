@@ -49,7 +49,7 @@ function draw_bixels_intervals() {
 }
 
 function draw_effective_intensity() {
-    if (left_leaf_times.length === 0) {
+    if (left_leaf_times.length === 0 || no_solution) {
         // console.log("No leafs");
         return;
     }
@@ -64,7 +64,7 @@ function draw_effective_intensity() {
 }
 
 function draw_leafs() {
-    if (left_leaf_times.length === 0) {
+    if (left_leaf_times.length === 0 || no_solution) {
         // console.log("No leafs");
         return;
     }
@@ -92,7 +92,7 @@ function draw_leafs() {
     }
     CTX2.stroke();
 }
-function draw_interleafs() {
+function draw_interleafs_integral() {
     if (left_leaf_times.length === 0 || no_solution) {
         // console.log("No leafs");
         return;
@@ -110,6 +110,22 @@ function draw_interleafs() {
     }
     CTX2.fill();
 }
+function draw_effective_intensity_integral() {
+    if (left_leaf_times.length === 0 || no_solution) {
+        // console.log("No leafs");
+        return;
+    }
+    CTX.beginPath();
+    CTX.fillStyle = "pink";
+    CTX.lineWidth = 0;
+    CTX.moveTo(intervals_centers[0], HEIGHT);
+    for (var i = 0; i < left_leaf_times.length; i++) {
+        CTX.lineTo(intervals_centers[i], (left_leaf_times[i]-right_leaf_times[i])*range_power.value);
+    }
+    CTX.lineTo(intervals_centers[left_leaf_times.length-1], HEIGHT);
+    CTX.fill();
+
+}
 
 function draw_all() {
     clear();
@@ -122,6 +138,7 @@ function draw_all() {
     if(draw_discretization_checkbox.checked){
         draw_bixels_fluence_approximation();
     }
+    draw_interleafs_integral();
     draw_leafs();
     if(draw_effective_intensity_checkbox.checked){
         draw_effective_intensity();
