@@ -27,6 +27,29 @@ function add_point(x, y) {
         }
     }
 }
+function classic_function(x) {
+    PTS = [];
+    for (var x = 50; x < WIDTH -50; x++) {
+        y = HEIGHT - ((HEIGHT / 3) * Math.sin(x * Math.PI * 2 / WIDTH)) - (x * HEIGHT / WIDTH);
+        PTS.push({ x: x, y: y });
+    }
+}
+function typical_fluence(x) {
+    PTS = [];
+    for (var x = 200; x < WIDTH - 200; x++) {
+        y = 50*Math.sin(0.025*(200-x)) + 0.3*x + 100
+        PTS.push({ x: x, y: y });
+    }
+}
+function no_pts(){
+    PTS = [];
+    intervals_bounds = [];
+    intervals_centers = [];
+    intervals_heights = [];
+    intervals_values = [];
+    left_leaf_times = [];
+    right_leaf_times = [];
+}
 
 function split_to_intervals() {
     if (PTS.length === 0) {
