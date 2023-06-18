@@ -92,6 +92,24 @@ function draw_leafs() {
     }
     CTX2.stroke();
 }
+function draw_interleafs() {
+    if (left_leaf_times.length === 0 || no_solution) {
+        // console.log("No leafs");
+        return;
+    }
+    const TIME_SCALE = 100;
+    const TIME_0 = 2;
+    CTX2.beginPath();
+    CTX2.fillStyle = "pink";
+    CTX2.lineWidth = 0;
+    for (var i = 0; i < left_leaf_times.length; i++) {
+        CTX2.lineTo(intervals_centers[i], left_leaf_times[i]*TIME_SCALE + TIME_0);
+    }
+    for (var i = right_leaf_times.length-1; i >= 0 ; i--) {
+        CTX2.lineTo(intervals_centers[i], right_leaf_times[i]*TIME_SCALE + TIME_0);
+    }
+    CTX2.fill();
+}
 
 function draw_all() {
     clear();
@@ -108,4 +126,5 @@ function draw_all() {
     if(draw_effective_intensity_checkbox.checked){
         draw_effective_intensity();
     }
+    draw_interleafs();
 }
