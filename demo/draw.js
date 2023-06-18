@@ -113,18 +113,17 @@ function draw_interleafs() {
 
 function draw_all() {
     clear();
-    draw_intensity();
     split_to_intervals();
+    calculate_leafs();
+    draw_intensity();
     if(draw_intervals_checkbox.checked){
         draw_bixels_intervals();
     }
     if(draw_discretization_checkbox.checked){
         draw_bixels_fluence_approximation();
     }
-    calculate_leafs();
     draw_leafs();
     if(draw_effective_intensity_checkbox.checked){
         draw_effective_intensity();
     }
-    draw_interleafs();
 }
