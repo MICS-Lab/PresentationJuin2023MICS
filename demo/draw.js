@@ -111,6 +111,8 @@ function draw_all() {
         }
         calculate_leafs();
         draw_leafs();
-        draw_effective_intensity();
+        if(draw_effective_intensity_checkbox.checked){
+            draw_effective_intensity();
+        }
     }
 }
