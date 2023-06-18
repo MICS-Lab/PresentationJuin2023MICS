@@ -104,7 +104,9 @@ function draw_all() {
         draw_intensity();
         split_to_intervals();
         draw_bixels_intervals();
-        draw_bixels_fluence_approximation();
+        if(draw_discretization_checkbox.checked){
+            draw_bixels_fluence_approximation();
+        }
         calculate_leafs();
         draw_leafs();
         draw_effective_intensity();
