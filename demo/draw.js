@@ -103,7 +103,9 @@ function draw_all() {
         clear();
         draw_intensity();
         split_to_intervals();
-        draw_bixels_intervals();
+        if(draw_intervals_checkbox.checked){
+            draw_bixels_intervals();
+        }
         if(draw_discretization_checkbox.checked){
             draw_bixels_fluence_approximation();
         }
