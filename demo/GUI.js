@@ -80,6 +80,12 @@ function typical_fluence(x) {
 }
 function no_pts(){
     PTS = [];
+    intervals_bounds = [];
+    intervals_centers = [];
+    intervals_heights = [];
+    intervals_values = [];
+    left_leaf_times = [];
+    right_leaf_times = [];
 }
 typical_fluence();
 draw_all();
