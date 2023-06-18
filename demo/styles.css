@@ -15,7 +15,7 @@ body {
 .range{
     display: flex;
     align-items: center;
-    margin-right: 2em;
+    padding-right: 2em;
 }
 .range_value{
     width: 5em;
