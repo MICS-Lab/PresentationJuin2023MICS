@@ -3,6 +3,7 @@ var intervals_bounds = [];
 var intervals_centers = [];
 var intervals_heights = [];
 var intervals_values = [];
+var fluences = [];
 var left_leaf_times = [];
 var right_leaf_times = [];
 var v_max_per_bixel = 1;
@@ -86,7 +87,11 @@ function calculate_leafs() {
         return;
     }
     try {
-        leafs = leaf_sequence(intervals_values, range_power.value, range_max_speed.value);
+        var fluences = [];
+        for (var i = 0; i < intervals_values.length; i++) {
+            fluences.push(HEIGHT - intervals_values[i]);
+        }
+        leafs = leaf_sequence(fluences, range_power.value, range_max_speed.value);
         left_leaf_times = leafs[0];
         right_leaf_times = leafs[1];
         no_solution = false;
