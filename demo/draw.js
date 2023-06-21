@@ -56,9 +56,9 @@ function draw_effective_intensity() {
     CTX.beginPath();
     CTX.strokeStyle = "red";
     CTX.lineWidth = 5;
-    CTX.moveTo(intervals_centers[0], (left_leaf_times[0]-right_leaf_times[0])*range_power.value);
+    CTX.moveTo(intervals_centers[0], HEIGHT-(left_leaf_times[0]-right_leaf_times[0])*range_power.value);
     for (var i = 1; i < left_leaf_times.length; i++) {
-        CTX.lineTo(intervals_centers[i], (left_leaf_times[i]-right_leaf_times[i])*range_power.value);
+        CTX.lineTo(intervals_centers[i], HEIGHT-(left_leaf_times[i]-right_leaf_times[i])*range_power.value);
     }
     CTX.stroke();
 }
