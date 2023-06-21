@@ -34,16 +34,16 @@ function leaf_sequence(fluence, power, max_speed){
     for (var i = 0; i < x_size-1; i++) {
         // left leafs
         var row = new Array(nb_var).fill(0);
-        row[i] = 1;
-        row[i + 1] = -1;
+        row[i] = -1;
+        row[i + 1] = 1;
         A.push(row);
-        b.push(max_speed);
+        b.push(-1/max_speed);
         // right leafs
         var row = new Array(nb_var).fill(0);
-        row[x_size + i] = 1;
-        row[x_size + i + 1] = -1;
+        row[x_size + i] = -1;
+        row[x_size + i + 1] = 1;
         A.push(row);
-        b.push(max_speed);
+        b.push(-1/max_speed);
     }
     // no backward constraints
     for (var i = 0; i < x_size-1; i++) {
