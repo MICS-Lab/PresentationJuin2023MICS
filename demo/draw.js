@@ -70,7 +70,7 @@ function draw_leafs() {
     }
     if(no_solution) {
         CTX2.beginPath();
-        CTX2.fillStyle = "#ffcccb";
+        CTX2.fillStyle = "#pink";
         CTX2.rect(0, 0, jaws.width, jaws.height);
         CTX2.fill();
     }
