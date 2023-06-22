@@ -23,42 +23,6 @@ addListenerMulti(intensity, 'pointerup mouseup touchend', function (e) {
     draw_all();
 });
 
-//// this part miss behave on cell phone so just ignore atm
-// addListenerMulti(intensity, 'pointerleave mouseleave', function (e) {
-// // intensity.addEventListener('pointerleave mouseleave', function (e) {
-//     if (DOWN) {
-//         var rect = intensity.getBoundingClientRect();if(e.clientX === undefined){
-//             var x = e.touches[0].clientX - rect.left;
-//             var y = e.touches[0].clientY - rect.top;
-//         }else{
-//             var x = e.clientX - rect.left;
-//             var y = e.clientY - rect.top;
-//         }
-//         add_point(Math.max(0, Math.min(x, WIDTH)), Math.max(0, Math.min(y, HEIGHT)));
-//         draw_all();
-//     }
-//     DOWN = false;
-// });
-// addListenerMulti(intensity, 'pointerenter mouseenter', function (e) {
-// // intensity.addEventListener('pointerenter mouseenter', function (e) {
-//     if (e.buttons != 0) {
-//         var rect = intensity.getBoundingClientRect();
-//         if(e.clientX === undefined){
-//             var x = e.touches[0].clientX - rect.left;
-//             var y = e.touches[0].clientY - rect.top;
-//         }else{
-//             var x = e.clientX - rect.left;
-//             var y = e.clientY - rect.top;
-//         }
-//         if (PTS.length === 0) {
-//             PTS.push({ x: Math.round(x), y: y });
-//         } else {
-//             add_point(Math.max(0, Math.min(x, WIDTH)), Math.max(0, Math.min(y, HEIGHT)));
-//         }
-//         DOWN = true;
-//         draw_intensity();
-//     }
-// });
 addListenerMulti(intensity, 'pointerdown mousedown touchstart', function (e) {
 // intensity.addEventListener('pointerdown mousedown touchstart', function (e) {
     var rect = intensity.getBoundingClientRect();
@@ -99,8 +63,40 @@ if (navigator.userAgent.match(/Android/i)
  || navigator.userAgent.match(/iPod/i)
  || navigator.userAgent.match(/BlackBerry/i)
  || navigator.userAgent.match(/Windows Phone/i)) {
-    a = true ;
+    // pass
 } else {
-    a = false ;
+    // this part miss behave on cell phones
+    addListenerMulti(intensity, 'pointerleave mouseleave', function (e) {
+        if (DOWN) {
+            var rect = intensity.getBoundingClientRect();if(e.clientX === undefined){
+                var x = e.touches[0].clientX - rect.left;
+                var y = e.touches[0].clientY - rect.top;
+            }else{
+                var x = e.clientX - rect.left;
+                var y = e.clientY - rect.top;
+            }
+            add_point(Math.max(0, Math.min(x, WIDTH)), Math.max(0, Math.min(y, HEIGHT)));
+            draw_all();
+        }
+        DOWN = false;
+    });
+    addListenerMulti(intensity, 'pointerenter mouseenter', function (e) {
+        if (e.buttons != 0) {
+            var rect = intensity.getBoundingClientRect();
+            if(e.clientX === undefined){
+                var x = e.touches[0].clientX - rect.left;
+                var y = e.touches[0].clientY - rect.top;
+            }else{
+                var x = e.clientX - rect.left;
+                var y = e.clientY - rect.top;
+            }
+            if (PTS.length === 0) {
+                PTS.push({ x: Math.round(x), y: y });
+            } else {
+                add_point(Math.max(0, Math.min(x, WIDTH)), Math.max(0, Math.min(y, HEIGHT)));
+            }
+            DOWN = true;
+            draw_intensity();
+        }
+    });
 }
-console.log(a);
