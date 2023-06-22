@@ -21,8 +21,9 @@ addListenerMulti(intensity, 'pointerup mouseup touchend', function (e) {
         PTS.push({ x: PTS[0].x, y:  PTS[0].y });
     }
     draw_all();
-    console.log("pointerup");
 });
+
+//// this part miss behave on cell phone so just ignore atm
 // addListenerMulti(intensity, 'pointerleave mouseleave', function (e) {
 // // intensity.addEventListener('pointerleave mouseleave', function (e) {
 //     if (DOWN) {
@@ -38,26 +39,26 @@ addListenerMulti(intensity, 'pointerup mouseup touchend', function (e) {
 //     }
 //     DOWN = false;
 // });
-addListenerMulti(intensity, 'pointerenter mouseenter', function (e) {
-// intensity.addEventListener('pointerenter mouseenter', function (e) {
-    if (e.buttons != 0) {
-        var rect = intensity.getBoundingClientRect();
-        if(e.clientX === undefined){
-            var x = e.touches[0].clientX - rect.left;
-            var y = e.touches[0].clientY - rect.top;
-        }else{
-            var x = e.clientX - rect.left;
-            var y = e.clientY - rect.top;
-        }
-        if (PTS.length === 0) {
-            PTS.push({ x: Math.round(x), y: y });
-        } else {
-            add_point(Math.max(0, Math.min(x, WIDTH)), Math.max(0, Math.min(y, HEIGHT)));
-        }
-        DOWN = true;
-        draw_intensity();
-    }
-});
+// addListenerMulti(intensity, 'pointerenter mouseenter', function (e) {
+// // intensity.addEventListener('pointerenter mouseenter', function (e) {
+//     if (e.buttons != 0) {
+//         var rect = intensity.getBoundingClientRect();
+//         if(e.clientX === undefined){
+//             var x = e.touches[0].clientX - rect.left;
+//             var y = e.touches[0].clientY - rect.top;
+//         }else{
+//             var x = e.clientX - rect.left;
+//             var y = e.clientY - rect.top;
+//         }
+//         if (PTS.length === 0) {
+//             PTS.push({ x: Math.round(x), y: y });
+//         } else {
+//             add_point(Math.max(0, Math.min(x, WIDTH)), Math.max(0, Math.min(y, HEIGHT)));
+//         }
+//         DOWN = true;
+//         draw_intensity();
+//     }
+// });
 addListenerMulti(intensity, 'pointerdown mousedown touchstart', function (e) {
 // intensity.addEventListener('pointerdown mousedown touchstart', function (e) {
     var rect = intensity.getBoundingClientRect();
@@ -88,5 +89,4 @@ addListenerMulti(intensity, 'pointermove mousemove touchmove', function (e) {
         add_point(x, y);
         draw_intensity();
     }
-    console.log("move");
 });
