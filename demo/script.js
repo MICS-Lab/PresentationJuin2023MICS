@@ -91,7 +91,10 @@ function calculate_leafs() {
         for (var i = 0; i < intervals_values.length; i++) {
             fluences.push(HEIGHT - intervals_values[i]);
         }
-        leafs = leaf_sequence(fluences, range_power.value, range_max_speed.value);
+        var full_length = (intervals_bounds[intervals_bounds.length - 1] - intervals_bounds[0]);
+        var nb_intervals = intervals_bounds.length - 1;
+        var max_speed_factor = nb_intervals/(full_length/100);
+        leafs = leaf_sequence(fluences, range_power.value, range_max_speed.value*max_speed_factor);
         left_leaf_times = leafs[0];
         right_leaf_times = leafs[1];
         no_solution = false;
