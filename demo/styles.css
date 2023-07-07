@@ -6,6 +6,7 @@ body {
 #intensity {
     border: 1px solid black;
     margin: 0.5em;
+    touch-action: none;
 }
 .line{
     display: flex;
